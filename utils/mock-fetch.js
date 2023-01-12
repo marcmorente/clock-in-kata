@@ -1,4 +1,4 @@
-function mockFetchOk(time, gpsCoordinates) {
+const mockFetchOk = (time, gpsCoordinates) => {
     let warningMessage = typeof gpsCoordinates === 'undefined' ? 'Coordinates was not send' : '';
 
     return new Promise((resolve) => {
@@ -9,9 +9,9 @@ function mockFetchOk(time, gpsCoordinates) {
             });
         }, 500);
     });
-}
+};
 
-function mockFetchError(time, gpsCoordinates) {
+const mockFetchError = (time, gpsCoordinates) => {
     let warningMessage = typeof gpsCoordinates === 'undefined' ? 'Coordinates was not send' : '';
 
     return new Promise((resolve, reject) => {
@@ -22,6 +22,6 @@ function mockFetchError(time, gpsCoordinates) {
             });
         }, 500);
     });
-}
+};
 
 export { mockFetchOk, mockFetchError };

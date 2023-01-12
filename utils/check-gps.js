@@ -1,4 +1,4 @@
-function gpsIsAvailable() {
+const gpsIsAvailable = () => {
     return new Promise((resolve) => {
         const availableGpsCoordinates = {
             latitude: 1,
@@ -9,7 +9,7 @@ function gpsIsAvailable() {
     });
 }
 
-function gpsIsNotAvailable() {
+const gpsIsNotAvailable = () => {
     return new Promise((resolve, reject) => {
         reject('GPS is not available');
     });
