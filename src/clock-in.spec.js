@@ -1,24 +1,7 @@
 import assert from 'assert';
 import {mockFetchOk, mockFetchError} from "../utils/mock-fetch";
+import {gpsIsAvailable, gpsIsNotAvailable} from "../utils/check-gps";
 import {clockIn} from "./main";
-
-function gpsIsAvailable() {
-
-    return new Promise((resolve) => {
-        const availableGpsCoordinates = {
-            latitude: 1,
-            longitude: 1
-        };
-
-        resolve(availableGpsCoordinates);
-    });
-}
-
-function gpsIsNotAvailable() {
-    return new Promise((resolve, reject) => {
-        reject('GPS is not available');
-    });
-}
 
 const time = 10;
 
